@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TempMail Pro | Secure & Fast</title>
+    
+    <link rel="icon" type="image/x-icon" href="https://files.catbox.moe/ub5wyo.png">
+    <link rel="shortcut icon" href="https://files.catbox.moe/ub5wyo.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  	<script src="https://pl28995561.profitablecpmratenetwork.com/58/68/3e/58683e28184b135c88d3d7eddf40b971.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>TempMail - Instant Secure Email</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #050510;
+            color: #e2e8f0;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        /* ============================================
+           SVG ICON SYSTEM
+           ============================================ */
+        .icon {
+            width: 1em; height: 1em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .icon svg {
+            width: 100%; height: 100%;
+            fill: currentColor;
+        }
+        .icon-sm { font-size: 14px; }
+        .icon-md { font-size: 18px; }
+        .icon-lg { font-size: 22px; }
+        .icon-xl { font-size: 28px; }
+        .icon-2xl { font-size: 36px; }
+        /* ============================================
+           ANIMATED BACKGROUND
+           ============================================ */
+        .bg-scene {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 20% 50%, #0c0a2a 0%, #050510 70%);
+        }
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            will-change: transform;
+        }
+        .bg-orb:nth-child(1) {
+            width: 600px; height: 600px;
+            top: -15%; left: -10%;
+            background: radial-gradient(circle, #6366f1 0%, #4f46e5 30%, transparent 70%);
+            animation: orbFloat1 20s ease-in-out infinite;
+        }
+        .bg-orb:nth-child(2) {
+            width: 500px; height: 500px;
+            top: 10%; right: -15%;
+            background: radial-gradient(circle, #ec4899 0%, #a855f7 30%, transparent 70%);
+            animation: orbFloat2 25s ease-in-out infinite;
+        }
+        .bg-orb:nth-child(3) {
+            width: 450px; height: 450px;
+            bottom: -10%; left: 30%;
+            background: radial-gradient(circle, #06b6d4 0%, #3b82f6 30%, transparent 70%);
+            animation: orbFloat3 22s ease-in-out infinite;
+        }
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            animation: particleFloat linear infinite;
+        }
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(80px, -50px) scale(1.1); }
+            66% { transform: translate(-40px, 60px) scale(0.95); }
+        }
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-60px, 40px) scale(0.9); }
+            66% { transform: translate(50px, -70px) scale(1.15); }
+        }
+        @keyframes orbFloat3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(70px, 50px) scale(1.1); }
+            66% { transform: translate(-80px, -30px) scale(0.9); }
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        /* Grid pattern overlay */
+        .grid-pattern {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+        }
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+        }
+        @keyframes borderGlow {
+            0%, 100% { border-color: rgba(99,102,241,0.2); }
+            50% { border-color: rgba(99,102,241,0.5); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes slideInToast {
+            from { transform: translateX(120%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOutToast {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(120%); opacity: 0; }
+        }
+        @keyframes slideUpMobile {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes breathe {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 0.6; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes mailBounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(0); }
+            10% { transform: translateY(-20px) rotate(-5deg); }
+            30% { transform: translateY(-10px) rotate(3deg); }
+            40% { transform: translateY(-15px) rotate(-3deg); }
+            60% { transform: translateY(-5px) rotate(2deg); }
+        }
+        .anim-fade-up { animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+        .anim-fade-down { animation: fadeInDown 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+        .anim-fade-left { animation: fadeInLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+        .anim-fade-right { animation: fadeInRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+        .anim-scale { animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        /* ============================================
+           GLASS MORPHISM
+           ============================================ */
+        .glass {
+            background: rgba(15, 15, 35, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(99,102,241,0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99,102,241,0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 30px rgba(99,102,241,0.1);
+        }
+        .glass-card:hover::before { opacity: 1; }
+        /* ============================================
+           LAYOUT
+           ============================================ */
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding-bottom: 100px;
+        }
+        @media (min-width: 1024px) {
+            .app-container { padding: 0 32px; }
+            .app-grid {
+                grid-template-columns: 1fr 380px;
+                gap: 32px;
+            }
+        }
+        /* ============================================
+           HEADER
+           ============================================ */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @media (min-width: 1024px) {
+            .header-inner { padding: 16px 32px; }
+        }
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        
+        .logo-dot {
+            position: absolute;
+            top: -3px; right: -3px;
+            width: 14px; height: 14px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 3px solid #050510;
+            animation: breathe 2s ease-in-out infinite;
+        }
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #c7d2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+        .logo-text p {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .header-btn {
+            width: 44px; height: 44px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #94a3b8;
+            font-size: 18px;
+        }
+        .header-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            transform: rotate(180deg);
+        }
+        /* ============================================
+           MOBILE STATS
+           ============================================ */
+        .mobile-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        @media (min-width: 1024px) {
+            .mobile-stats { display: none; }
+        }
+        .mobile-stat {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+            padding: 16px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .mobile-stat:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-2px);
+        }
+        .mobile-stat .stat-val {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            line-height: 1;
+        }
+        .mobile-stat .stat-label {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        /* ============================================
+           EMAIL GENERATOR CARD
+           ============================================ */
+        .email-gen {
+            border-radius: 24px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 640px) {
+            .email-gen { padding: 36px; }
+        }
+        /* Animated gradient border */
+        .email-gen::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 26px;
+            background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899, #6366f1);
+            background-size: 300% 300%;
+            animation: shimmer 4s linear infinite;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .email-gen::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background: rgba(10,10,30,0.9);
+            z-index: -1;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .section-icon {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .section-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+        .section-header p {
+            font-size: 13px;
+            color: #64748b;
+        }
+        .email-input-box {
+            border-radius: 18px;
+            border: 2px solid rgba(99,102,241,0.15);
+            background: rgba(10,10,30,0.7);
+            padding: 4px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+        .email-input-box:focus-within {
+            border-color: rgba(99,102,241,0.4);
+            box-shadow: 0 0 40px rgba(99,102,241,0.1);
+        }
+        .email-input-inner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.3);
+        }
+        .email-input-inner .at-icon {
+            color: #818cf8;
+            font-size: 22px;
+            animation: float 2.5s ease-in-out infinite;
+        }
+        .email-input-inner input {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 15px;
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            letter-spacing: 0.3px;
+            min-width: 0;
+        }
+        @media (min-width: 640px) {
+            .email-input-inner input { font-size: 17px; }
+        }
+        .email-input-inner input::placeholder { color: #475569; }
+        .copy-icon-btn {
+            width: 42px; height: 42px;
+            border-radius: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 18px;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .copy-icon-btn:hover {
+            background: rgba(255,255,255,0.1);
+            color: #818cf8;
+        }
+        .btn-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .btn {
+            padding: 14px 20px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(99,102,241,0.4);
+        }
+        .btn-primary:active { transform: translateY(-1px); }
+        /* Ripple effect */
+        .btn-primary .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.04);
+            color: #e2e8f0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        .email-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #64748b;
+        }
+        .status-dot {
+            width: 8px; height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: breathe 2s ease-in-out infinite;
+        }
+        .domain-tag {
+            font-size: 12px;
+            color: #94a3b8;
+            font-family: monospace;
+            background: rgba(0,0,0,0.3);
+            padding: 6px 14px;
+            border-radius: 10px;
+        }
+        /* ============================================
+           AD CONTAINER
+           ============================================ */
+        .ad-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 24px 0;
+        }
+        .ad-box {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(30,41,59,0.5) 0%, rgba(51,65,85,0.3) 100%);
+            border: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .ad-label {
+            font-size: 9px;
+            color: #475569;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            background: rgba(0,0,0,0.4);
+            padding: 3px 12px;
+            border-radius: 20px;
+            position: absolute;
+            top: 8px;
+        }
+        /* ============================================
+           INBOX
+           ============================================ */
+        .inbox-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .inbox-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .inbox-title-group h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .count-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.06);
+            font-size: 13px;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+        .unread-badge {
+            min-width: 24px; height: 24px;
+            padding: 0 8px;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #22c55e;
+            background: rgba(34,197,94,0.08);
+            border: 1px solid rgba(34,197,94,0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .live-dot {
+            width: 8px; height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: breathe 1.5s ease-in-out infinite;
+        }
+        /* Empty State */
+        .empty-state {
+            border-radius: 24px;
+            padding: 60px 24px;
+            text-align: center;
+        }
+        .empty-icon-wrapper {
+            width: 100px; height: 100px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, rgba(30,41,59,0.6) 0%, rgba(15,23,42,0.8) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            font-size: 40px;
+            color: #334155;
+            animation: mailBounce 4s ease-in-out infinite;
+        }
+        .empty-state h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .empty-state p {
+            font-size: 14px;
+            color: #64748b;
+        }
+        /* Email List */
+        .email-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .email-item {
+            border-radius: 20px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .email-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        .email-item:hover::after { transform: translateX(100%); }
+        .email-item:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .email-item.unread {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(139,92,246,0.06) 100%);
+            border-left: 4px solid #6366f1;
+        }
+        .email-item.read {
+            background: rgba(30,41,59,0.2);
+            border-left: 4px solid transparent;
+            opacity: 0.8;
+        }
+        .email-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .email-avatar {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 639px) {
+            .email-avatar { width: 42px; height: 42px; border-radius: 12px; font-size: 16px; }
+        }
+        .email-content { flex: 1; min-width: 0; }
+        .email-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .email-sender {
+            font-size: 14px;
+            font-weight: 600;
+            color: #cbd5e1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .email-item.unread .email-sender {
+            color: #fff;
+            font-weight: 700;
+        }
+        .email-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .unread-dot {
+            width: 10px; height: 10px;
+            background: #6366f1;
+            border-radius: 50%;
+            animation: breathe 1.5s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(99,102,241,0.5);
+        }
+        .email-time {
+            font-size: 12px;
+            color: #475569;
+            white-space: nowrap;
+        }
+        .email-subject {
+            font-size: 14px;
+            color: #94a3b8;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-bottom: 4px;
+        }
+        .email-preview {
+            font-size: 12px;
+            color: #475569;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        /* ============================================
+           SIDEBAR (DESKTOP)
+           ============================================ */
+        .sidebar {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 1024px) {
+            .sidebar {
+                display: flex;
+            }
+        }
+        .sidebar .glass-card { padding: 24px; }
+        .sidebar-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .stat-row:last-child { border-bottom: none; }
+        .stat-row .label { font-size: 14px; color: #94a3b8; }
+        .stat-row .value { font-size: 20px; font-weight: 800; }
+        .action-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            font-family: inherit;
+            color: inherit;
+        }
+        .action-btn:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(255,255,255,0.1);
+            transform: translateX(4px);
+        }
+        .action-btn-icon {
+            width: 42px; height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .action-btn:hover .action-btn-icon { transform: scale(1.1); }
+        .action-btn-text .title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .action-btn-text .desc {
+            font-size: 12px;
+            color: #475569;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 4px 0;
+        }
+        .feature-icon {
+            width: 42px; height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .feature-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+        .feature-item p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+        .tip-check {
+            color: #22c55e;
+            font-size: 12px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        /* ============================================
+           MODAL
+           ============================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal-box {
+            position: fixed;
+            z-index: 51;
+            background: linear-gradient(135deg, rgba(15,15,35,0.98), rgba(30,41,59,0.98));
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        /* Desktop modal */
+        @media (min-width: 640px) {
+            .modal-box {
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%) scale(0.9);
+                width: 92%;
+                max-width: 720px;
+                max-height: 85vh;
+                border-radius: 24px;
+            }
+            .modal-box.active {
+                opacity: 1;
+                pointer-events: all;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+        /* Mobile modal - full screen bottom sheet */
+        @media (max-width: 639px) {
+            .modal-box {
+                bottom: 0; left: 0; right: 0;
+                top: 8vh;
+                border-radius: 24px 24px 0 0;
+                transform: translateY(100%);
+            }
+            .modal-box.active {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+        }
+        .modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+        }
+        .modal-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+        .modal-header p {
+            font-size: 13px;
+            color: #64748b;
+        }
+        .modal-close {
+            width: 40px; height: 40px;
+            border-radius: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 20px;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .modal-close:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            background: rgba(0,0,0,0.15);
+        }
+        .modal-body::-webkit-scrollbar { width: 6px; }
+        .modal-body::-webkit-scrollbar-track { background: transparent; }
+        .modal-body::-webkit-scrollbar-thumb {
+            background: rgba(99,102,241,0.3);
+            border-radius: 10px;
+        }
+        .modal-body img { max-width: 100%; height: auto; border-radius: 8px; }
+        .modal-body a { color: #818cf8; }
+        .modal-footer {
+            padding: 18px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.02);
+        }
+        .modal-footer .date { font-size: 13px; color: #475569; }
+        .modal-footer .close-btn {
+            padding: 10px 24px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        .modal-footer .close-btn:hover {
+            background: rgba(255,255,255,0.12);
+        }
+        /* ============================================
+           TOAST NOTIFICATIONS
+           ============================================ */
+        .toast-container {
+            position: fixed;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        /* Desktop: top right */
+        @media (min-width: 640px) {
+            .toast-container { top: 20px; right: 20px; }
+        }
+        /* Mobile: top center full width */
+        @media (max-width: 639px) {
+            .toast-container { top: 12px; left: 12px; right: 12px; }
+        }
+        .toast {
+            background: rgba(15,15,35,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-left: 4px solid;
+            padding: 16px 22px;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: slideInToast 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @media (max-width: 639px) {
+            .toast {
+                animation-name: fadeInDown;
+            }
+        }
+        .toast.hiding {
+            animation: slideOutToast 0.4s ease forwards;
+        }
+        @media (max-width: 639px) {
+            .toast.hiding {
+                animation-name: fadeInUp;
+                animation-direction: reverse;
+            }
+        }
+        .toast.success { border-left-color: #22c55e; }
+        .toast.error { border-left-color: #ef4444; }
+        .toast.info { border-left-color: #3b82f6; }
+        .toast-icon { font-size: 20px; flex-shrink: 0; }
+        .toast-msg { font-size: 14px; font-weight: 600; color: #fff; }
+        /* ============================================
+           ADBLOCK DETECTION
+           ============================================ */
+        #adblock-wall {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: none;
+        }
+        #adblock-wall.active { display: block; }
+        .adblock-bg {
+            position: absolute;
+            inset: 0;
+            background: rgba(5,5,16,0.97);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        .adblock-dialog {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 440px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 28px;
+            padding: 44px 32px;
+            text-align: center;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .adblock-shield {
+            width: 88px; height: 88px;
+            margin: 0 auto 28px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #fff;
+            box-shadow: 0 20px 50px rgba(239,68,68,0.4);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        .adblock-shield svg { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+        .adblock-dialog h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .adblock-dialog p {
+            font-size: 15px;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+        .adblock-dialog .reload-btn {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 14px;
+            border: none;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+            box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+        }
+        .adblock-dialog .reload-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(99,102,241,0.4);
+        }
+        body.adblocked .bg-scene,
+        body.adblocked .grid-pattern,
+        body.adblocked .header,
+        body.adblocked .app-container,
+        body.adblocked .toast-container {
+            filter: blur(14px);
+            pointer-events: none;
+            user-select: none;
+        }
+        /* ============================================
+           MISC
+           ============================================ */
+        .hidden { display: none !important; }
+        .spinner { animation: spin 0.8s linear infinite; }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Adblock Wall -->
+    <div id="adblock-wall">
+        <div class="adblock-bg"></div>
+        <div class="adblock-dialog">
+            <div class="adblock-shield">
+                <span class="icon" style="font-size:40px;">
+                    <svg viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z"/></svg>
+                </span>
+            </div>
+            <h2>Ad Blocker Detected!</h2>
+            <p>We provide this temporary email service for free. To keep it running, we rely on advertisements. Please disable your AdBlocker and refresh the page to continue.</p>
+            <button class="reload-btn" onclick="window.location.reload()">
+                <span class="icon" style="font-size:16px;">
+                    <svg viewBox="0 0 512 512" width="40" height="40"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z" fill="currentColor"/></svg>
+                </span>
+                Refresh Page
+            </button>
+        </div>
+    </div>
+    <!-- Animated Background -->
+    <div class="bg-scene">
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+        <div class="bg-orb"></div>
+    </div>
+    <div class="grid-pattern"></div>
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastBox"></div>
+    <!-- Header -->
+    <header class="header glass anim-fade-down">
+        <div class="header-inner">
+            <div class="logo-group">
+                <div class="logo-icon">
+                    <img alt="TempMail Logo" src="https://files.catbox.moe/ub5wyo.png" style="
+            position: relative;
+            width: 50px; height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+            animation: float 3s ease-in-out infinite;
+            color: #fff;
+            font-size: 22px;">
+                    <div class="logo-dot"></div>
+                </div>
+                <div class="logo-text">
+                    <h1>TempMail</h1>
+                    <p>Secure Email</p>
+                </div>
+            </div>
+            <button class="header-btn" onclick="refreshInbox()" id="refreshBtn" aria-label="Refresh">
+                <span class="icon" style="font-size:18px;" id="refreshIcon">
+                    <svg viewBox="0 0 512 512"><path d="M105.1 202.6c7.7-21.8 20.2-42.3 37.8-59.8c62.5-62.5 163.8-62.5 226.3 0L386.3 160H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h127.9c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v35.2L430.6 81.9c-87.5-87.5-229.3-87.5-316.8 0C73.2 122.5 47.5 181 41.6 241c-2 20.2 14.4 36.9 34.8 36.9c17 0 31.4-12.4 33.7-29.3zM480 256c-17 0-31.4 12.4-33.7 29.3c-7.7 54.5-37.8 104.8-82.4 143.3c-62.5 62.5-163.8 62.5-226.3 0L120.6 411.6c-.1-.1-.2-.1-.2-.2L137.7 352H160c17.7 0 32-14.3 32-32s-14.3-32-32-32H32.1c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8l17.1 17.1c87.5 87.5 229.3 87.5 316.8 0c40.6-40.6 66.3-99.1 72.2-159c2-20.2-14.4-36.9-34.8-36.9z" fill="currentColor"/></svg>
+                </span>
+            </button>
+        </div>
+    </header>
+    <!-- Top Ad -->
+    <div class="ad-wrapper">
+        <div class="ad-box">
+            <span class="ad-label"><script>
+  atOptions = {
+    'key' : '5ec0da476935f4deb9eb849061dcf7e7',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/5ec0da476935f4deb9eb849061dcf7e7/invoke.js"></script>
+
+</span>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="app-container">
+        <div class="app-grid">
+            <!-- LEFT COLUMN -->
+            <main>
+                <!-- Mobile Stats -->
+                <div class="mobile-stats anim-fade-up">
+                    <div class="mobile-stat" onclick="copyEmail()">
+                        <div class="stat-val" id="mTotal" style="color:#fff;">0</div>
+                        <div class="stat-label">Messages</div>
+                    </div>
+                    <div class="mobile-stat">
+                        <div class="stat-val" id="mUnread" style="color:#818cf8;">0</div>
+                        <div class="stat-label">Unread</div>
+                    </div>
+                    <div class="mobile-stat" onclick="generateNewEmail()">
+                        <div style="width:36px;height:36px;margin:0 auto 6px;border-radius:50%;background:rgba(168,85,247,0.15);display:flex;align-items:center;justify-content:center;">
+                            <span class="icon" style="font-size:16px;color:#a855f7;">
+                                <svg viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" fill="currentColor"/></svg>
+                            </span>
+                        </div>
+                        <div class="stat-label">New Email</div>
+                    </div>
+                </div>
+                <!-- Email Generator -->
+                <section class="email-gen glass anim-fade-up delay-1">
+                    <div class="section-header">
+                        <div class="section-icon" style="background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(168,85,247,0.2));color:#818cf8;">
+                            <span class="icon" style="font-size:20px;">
+                                <svg viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm9.4 155c-5.8-8.7-17.7-11.1-26.4-5.2l-112 74.7C118.3 230.2 112 240.3 112 251.2V352c0 17.7 14.3 32 32 32h64c0-17.7 14.3-32 32-32s32 14.3 32 32h64c17.7 0 32-14.3 32-32V251.2c0-10.9-6.3-21-16-25.7l-112-74.7c-2.5-1.7-5.3-2.8-8.2-3.2c-.9-.1-1.8-.2-2.7-.2c-5.4 0-10.7 2.2-14.6 6.6z" fill="currentColor"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <h2>Your Temporary Email</h2>
+                            <p>Copy and use it anywhere — it's instant</p>
+                        </div>
+                    </div>
+                    <div class="email-input-box">
+                        <div class="email-input-inner">
+                            <span class="at-icon icon" style="font-size:22px;">
+                                <svg viewBox="0 0 512 512"><path d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256v32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c70.7 0 128 57.3 128 128v32c0 17.7 14.3 32 32 32s32-14.3 32-32V256c0-106-86-192-192-192zm0 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z" fill="currentColor"/></svg>
+                            </span>
+                            <input type="text" id="emailAddr" readonly placeholder="Creating your email...">
+                            <button class="copy-icon-btn" onclick="copyEmail()" aria-label="Copy email">
+                                <span class="icon" style="font-size:18px;" id="copyBtnIcon">
+                                    <svg viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" fill="currentColor"/></svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="btn-row">
+                        <button class="btn btn-primary" onclick="copyEmail()">
+                            <span class="icon" style="font-size:16px;">
+                                <svg viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" fill="currentColor"/></svg>
+                            </span>
+                            Copy
+                        </button>
+                        <button class="btn btn-secondary" onclick="generateNewEmail()">
+                            <span class="icon" style="font-size:16px;color:#a855f7;">
+                                <svg viewBox="0 0 576 512"><path d="M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1L248.8 123c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2L277.3 42.7 263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5L234.7 42.7zM46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0L529.9 116.5c18.7-18.7 18.7-49.1 0-67.9L495.3 14c-18.7-18.7-49.1-18.7-67.9 0L46.1 395.4zM484.6 82.6l-105 105-23.3-23.3 105-105 23.3 23.3zM7.5 117.2C3 118.9 0 123.2 0 128s3 9.1 7.5 10.8L64 160l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L128 160l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L128 96 106.8 39.5C105.1 35 100.8 32 96 32s-9.1 3-10.8 7.5L64 96 7.5 117.2zm352 256c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L416 416l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L480 416l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L480 352l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L416 352l-56.5 21.2z" fill="currentColor"/></svg>
+                            </span>
+                            New Email
+                        </button>
+                    </div>
+                    <div class="email-footer">
+                        <span class="status-badge">
+                            <span class="status-dot"></span>
+                            Ready to receive
+                        </span>
+                        <span class="domain-tag" id="domainTag"></span>
+                    </div>
+                </section>
+                <!-- Middle Ad -->
+                <div class="ad-wrapper">
+                    <div class="ad-box">
+                        <span class="ad-label"><script>
+  atOptions = {
+    'key' : '5ec0da476935f4deb9eb849061dcf7e7',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/5ec0da476935f4deb9eb849061dcf7e7/invoke.js"></script>
+
+</span>
+                    </div>
+                </div>
+                <!-- Inbox Section -->
+                <section class="anim-fade-up delay-2">
+                    <div class="inbox-header">
+                        <div class="inbox-title-group">
+                            <h2>Inbox</h2>
+                            <span class="count-badge" id="countBadge">0</span>
+                            <span class="unread-badge hidden" id="unreadBadge">0</span>
+                        </div>
+                        <div class="live-indicator">
+                            <span class="live-dot"></span>
+                            Live
+                        </div>
+                    </div>
+                    <!-- Empty State -->
+                    <div class="empty-state glass" id="emptyState">
+                        <div class="empty-icon-wrapper">
+                            <span class="icon" style="font-size:40px;">
+                                <svg viewBox="0 0 512 512"><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 googl493 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.4-16.1-.8-21.9s-16.1-5.4-21.9 .8L131.2 358.3 14.9 311.1C6 307.5-.2 299.1 0 289.5s7.1-18 16.3-21L496.2 3.3c9.2-3.1 19.3-1.1 26.7 4.7z" fill="currentColor"/></svg>
+                            </span>
+                        </div>
+                        <h3>No messages yet</h3>
+                        <p>Share your email address to start receiving messages</p>
+                    </div>
+                    <!-- Email List -->
+                    <div class="email-list hidden" id="emailList"></div>
+                </section>
+                <!-- Bottom Ad -->
+                <div class="ad-wrapper">
+                    <div class="ad-box">
+                        <span class="ad-label"><script>
+  atOptions = {
+    'key' : '5ec0da476935f4deb9eb849061dcf7e7',
+    'format' : 'iframe',
+    'height' : 90,
+    'width' : 728,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/5ec0da476935f4deb9eb849061dcf7e7/invoke.js"></script>
+
+</span>
+                    </div>
+                </div>
+            </main>
+            <!-- RIGHT SIDEBAR (Desktop) -->
+            <aside class="sidebar">
+                <!-- Stats -->
+                <div class="glass-card anim-fade-right delay-2">
+                    <div class="sidebar-title">
+                        <span class="icon" style="font-size:14px;color:#818cf8;">
+                            <svg viewBox="0 0 512 512"><path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z" fill="currentColor"/></svg>
+                        </span>
+                        Statistics
+                    </div>
+                    <div>
+                        <div class="stat-row">
+                            <span class="label">Total Messages</span>
+                            <span class="value" style="color:#fff;" id="sTotal">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="label">Unread</span>
+                            <span class="value" style="color:#818cf8;" id="sUnread">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Actions -->
+                <div class="glass-card anim-fade-right delay-3">
+                    <div class="sidebar-title">Quick Actions</div>
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <button class="action-btn" onclick="copyEmail()">
+                            <div class="action-btn-icon" style="background:rgba(99,102,241,0.15);color:#818cf8;">
+                                <span class="icon" style="font-size:16px;">
+                                    <svg viewBox="0 0 448 512"><path d="M208 0H332.1c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48zM48 128h80v64H64V448H256V416h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48z" fill="currentColor"/></svg>
+                                </span>
+                            </div>
+                            <div class="action-btn-text">
+                                <div class="title">Copy Email</div>
+                                <div class="desc">To clipboard</div>
+                            </div>
+                        </button>
+                        <button class="action-btn" onclick="generateNewEmail()">
+                            <div class="action-btn-icon" style="background:rgba(168,85,247,0.15);color:#a855f7;">
+                                <span class="icon" style="font-size:16px;">
+                                    <svg viewBox="0 0 576 512"><path d="M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1L248.8 123c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2L277.3 42.7 263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5L234.7 42.7zM46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0L529.9 116.5c18.7-18.7 18.7-49.1 0-67.9L495.3 14c-18.7-18.7-49.1-18.7-67.9 0L46.1 395.4zM484.6 82.6l-105 105-23.3-23.3 105-105 23.3 23.3z" fill="currentColor"/></svg>
+                                </span>
+                            </div>
+                            <div class="action-btn-text">
+                                <div class="title">New Address</div>
+                                <div class="desc">Generate fresh email</div>
+                            </div>
+                        </button>
+                        <button class="action-btn" onclick="refreshInbox()">
+                            <div class="action-btn-icon" style="background:rgba(59,130,246,0.15);color:#3b82f6;">
+                                <span class="icon" style="font-size:16px;">
+                                    <svg viewBox="0 0 512 512"><path d="M105.1 202.6c7.7-21.8 20.2-42.3 37.8-59.8c62.5-62.5 163.8-62.5 226.3 0L386.3 160H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h127.9c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v35.2L430.6 81.9c-87.5-87.5-229.3-87.5-316.8 0C73.2 122.5 47.5 181 41.6 241c-2 20.2 14.4 36.9 34.8 36.9c17 0 31.4-12.4 33.7-29.3zM480 256c-17 0-31.4 12.4-33.7 29.3c-7.7 54.5-37.8 104.8-82.4 143.3c-62.5 62.5-163.8 62.5-226.3 0L120.6 411.6c-.1-.1-.2-.1-.2-.2L137.7 352H160c17.7 0 32-14.3 32-32s-14.3-32-32-32H32.1c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8l17.1 17.1c87.5 87.5 229.3 87.5 316.8 0c40.6-40.6 66.3-99.1 72.2-159c2-20.2-14.4-36.9-34.8-36.9z" fill="currentColor"/></svg>
+                                </span>
+                            </div>
+                            <div class="action-btn-text">
+                                <div class="title">Refresh Inbox</div>
+                                <div class="desc">Check for new mail</div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <!-- Features -->
+                <div class="glass-card anim-fade-right delay-4">
+                    <div class="sidebar-title">Why TempMail?</div>
+                    <div style="display:flex;flex-direction:column;gap:18px;">
+                        <div class="feature-item">
+                            <div class="feature-icon" style="background:rgba(99,102,241,0.15);color:#818cf8;">
+                                <span class="icon" style="font-size:16px;">
+                                    <svg viewBox="0 0 448 512"><path d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z" fill="currentColor"/></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h4>Instant Access</h4>
+                                <p>No registration or personal info required</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="background:rgba(34,197,94,0.15);color:#22c55e;">
+                                <span class="icon" style="font-size:16px;">
+                                    <svg viewBox="0 0 512 512"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z" fill="currentColor"/></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h4>Secure & Private</h4>
+                                <p>End-to-end encrypted, fully anonymous</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon" style="background:rgba(168,85,247,0.15);color:#a855f7;">
+                                <span class="icon" style="font-size:16px;">
+                                    <svg viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" fill="currentColor"/></svg>
+                                </span>
+                            </div>
+                            <div>
+                                <h4>Auto-Delete</h4>
+                                <p>Messages auto-delete after 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tips -->
+                <div class="glass-card anim-fade-right delay-5">
+                    <div class="sidebar-title">
+                        <span class="icon" style="font-size:14px;color:#f59e0b;">
+                            <svg viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80z" fill="currentColor"/></svg>
+                        </span>
+                        Pro Tips
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div class="tip-item">
+                            <span class="tip-check icon" style="font-size:12px;">
+                                <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" fill="currentColor"/></svg>
+                            </span>
+                            <span>Use for newsletter signups to avoid spam in your real inbox</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-check icon" style="font-size:12px;">
+                                <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" fill="currentColor"/></svg>
+                            </span>
+                            <span>Perfect for free trials, testing & one-time verifications</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-check icon" style="font-size:12px;">
+                                <svg viewBox="0 0 448 512"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" fill="currentColor"/></svg>
+                            </span>
+                            <span>Protect your real email from data breaches & tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+    <div class="modal-box" id="modalBox">
+        <div class="modal-header">
+            <div style="flex:1;min-width:0;margin-right:16px;">
+                <h3 id="modalSubject"></h3>
+                <p id="modalFrom"></p>
+            </div>
+            <button class="modal-close" onclick="closeModal()">
+                <span class="icon" style="font-size:20px;">
+                    <svg viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" fill="currentColor"/></svg>
+                </span>
+            </button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-footer">
+            <span class="date" id="modalDate"></span>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // ---------- Particles ----------
+        (function createParticles() {
+            var scene = document.querySelector('.bg-scene');
+            if (!scene) return;
+            for (var i = 0; i < 30; i++) {
+                var p = document.createElement('div');
+                p.className = 'particle';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (8 + Math.random() * 15) + 's';
+                p.style.animationDelay = Math.random() * 10 + 's';
+                p.style.width = (1 + Math.random() * 3) + 'px';
+                p.style.height = p.style.width;
+                p.style.opacity = (0.1 + Math.random() * 0.4);
+                scene.appendChild(p);
+            }
+        })();
+        // ---------- Ad-Block Detection ----------
+        (function detectAds() {
+            setTimeout(function() {
+                var detected = false;
+                // Method 1: bait element with ad-related classes
+                var bait1 = document.createElement('div');
+                bait1.className = 'adsbox ad-banner banner-ads textads ad-placement';
+                bait1.style.cssText = 'width:1px;height:1px;position:absolute;left:-9999px;top:-9999px;';
+                bait1.innerHTML = '&nbsp;';
+                document.body.appendChild(bait1);
+                // Method 2: bait with ad-specific ID and size
+                var bait2 = document.createElement('div');
+                bait2.id = 'ad-container-banner';
+                bait2.className = 'ad-unit ad-slot sponsored-ad';
+                bait2.setAttribute('data-ad-slot', '1234567890');
+                bait2.style.cssText = 'width:300px;height:250px;position:absolute;left:-9999px;top:-9999px;';
+                bait2.innerHTML = '&nbsp;';
+                document.body.appendChild(bait2);
+                // Method 3: bait with common ad iframe naming
+                var bait3 = document.createElement('div');
+                bait3.className = 'ad-wrapper ad-container google-ad';
+                bait3.style.cssText = 'width:728px;height:90px;position:absolute;left:-9999px;top:-9999px;';
+                bait3.innerHTML = '&nbsp;';
+                document.body.appendChild(bait3);
+                setTimeout(function() {
+                    if (bait1.offsetHeight === 0 || bait1.offsetWidth === 0 ||
+                        bait1.clientHeight === 0 || getComputedStyle(bait1).display === 'none' ||
+                        getComputedStyle(bait1).visibility === 'hidden') {
+                        detected = true;
+                    }
+                    if (bait2.offsetHeight === 0 || bait2.offsetWidth === 0 ||
+                        bait2.clientHeight === 0 || getComputedStyle(bait2).display === 'none') {
+                        detected = true;
+                    }
+                    if (bait3.offsetHeight === 0 || bait3.offsetWidth === 0 ||
+                        getComputedStyle(bait3).display === 'none') {
+                        detected = true;
+                    }
+                    try { document.body.removeChild(bait1); } catch(e){}
+                    try { document.body.removeChild(bait2); } catch(e){}
+                    try { document.body.removeChild(bait3); } catch(e){}
+                    if (detected) showAdWall();
+                }, 200);
+                // Method 4: try loading an ad script
+                var testScript = document.createElement('script');
+                testScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+                testScript.onerror = function() { detected = true; showAdWall(); };
+                testScript.onload = function() { try { document.head.removeChild(testScript); } catch(e){} };
+                document.head.appendChild(testScript);
+            }, 1500);
+        })();
+        function showAdWall() {
+            document.getElementById('adblock-wall').classList.add('active');
+            document.body.classList.add('adblocked');
+            if (refreshInterval) clearInterval(refreshInterval);
+        }
+        // ---------- State ----------
+        var API = 'https://api.mail.tm';
+        var account = null;
+        var token = null;
+        var refreshInterval = null;
+        var messages = [];
+        var isGenerating = false;
+        var viewedIds = {};
+        // ---------- Init ----------
+        document.addEventListener('DOMContentLoaded', function() {
+            initEmail();
+        });
+        // ---------- API Helpers ----------
+        function fetchRetry(url, opts, retries) {
+            retries = retries || 3;
+            opts = opts || {};
+            return new Promise(function(resolve, reject) {
+                var ctrl = new AbortController();
+                var tid = setTimeout(function() { ctrl.abort(); }, 12000);
+                opts.signal = ctrl.signal;
+                fetch(url, opts).then(function(res) {
+                    clearTimeout(tid);
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    resolve(res);
+                }).catch(function(err) {
+                    clearTimeout(tid);
+                    if (retries > 1) {
+                        setTimeout(function() {
+                            fetchRetry(url, opts, retries - 1).then(resolve).catch(reject);
+                        }, 1200);
+                    } else {
+                        reject(err);
+                    }
+                });
+            });
+        }
+        function randStr(len) {
+            var c = 'abcdefghijklmnopqrstuvwxyz0123456789';
+            var s = '';
+            for (var i = 0; i < len; i++) s += c.charAt(Math.floor(Math.random() * c.length));
+            return s;
+        }
+        // ---------- Email Generation ----------
+        function initEmail() {
+            if (isGenerating) return;
+            isGenerating = true;
+            var inp = document.getElementById('emailAddr');
+            inp.value = '';
+            inp.placeholder = 'Creating your email...';
+            fetchRetry(API + '/domains').then(function(r) { return r.json(); }).then(function(data) {
+                var domain = data['hydra:member'][0].domain;
+                document.getElementById('domainTag').textContent = domain;
+                var user = randStr(12);
+                var pass = randStr(16);
+                var email = user + '@' + domain;
+                return fetchRetry(API + '/accounts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ address: email, password: pass })
+                }).then(function(r) { return r.json(); }).then(function(acc) {
+                    account = acc;
+                    account.password = pass;
+                    return fetchRetry(API + '/token', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ address: email, password: pass })
+                    });
+                }).then(function(r) { return r.json(); }).then(function(t) {
+                    token = t.token;
+                    inp.value = email;
+                    showToast('✨ Email ready!', 'success');
+                    viewedIds = {};
+                    startAutoRefresh();
+                });
+            }).catch(function(err) {
+                console.error(err);
+                showToast('Retrying...', 'info');
+                setTimeout(function() { isGenerating = false; initEmail(); }, 3000);
+            }).finally(function() {
+                isGenerating = false;
+            });
+        }
+        // ---------- Messages ----------
+        function fetchMessages() {
+            if (!token) return;
+            fetchRetry(API + '/messages', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            }, 2).then(function(r) { return r.json(); }).then(function(data) {
+                var newMsgs = data['hydra:member'] || [];
+                if (newMsgs.length > messages.length && messages.length > 0) {
+                    var c = newMsgs.length - messages.length;
+                    showToast('📬 ' + c + ' new message' + (c > 1 ? 's' : '') + '!', 'success');
+                }
+                messages = newMsgs;
+                renderList();
+                updateStats();
+            }).catch(function(e) { console.error(e); });
+        }
+        function fetchDetail(id) {
+            return fetchRetry(API + '/messages/' + id, {
+                headers: { 'Authorization': 'Bearer ' + token }
+            }, 2).then(function(r) { return r.json(); });
+        }
+        function startAutoRefresh() {
+            fetchMessages();
+            if (refreshInterval) clearInterval(refreshInterval);
+            refreshInterval = setInterval(fetchMessages, 10000);
+        }
+        // ---------- Render ----------
+        function renderList() {
+            var list = document.getElementById('emailList');
+            var empty = document.getElementById('emptyState');
+            var badge = document.getElementById('countBadge');
+            var ubadge = document.getElementById('unreadBadge');
+            badge.textContent = messages.length;
+            var unread = 0;
+            messages.forEach(function(m) { if (!m.seen && !viewedIds[m.id]) unread++; });
+            ubadge.textContent = unread;
+            if (unread > 0) { ubadge.classList.remove('hidden'); } else { ubadge.classList.add('hidden'); }
+            if (messages.length === 0) {
+                list.classList.add('hidden');
+                empty.classList.remove('hidden');
+                return;
+            }
+            empty.classList.add('hidden');
+            list.classList.remove('hidden');
+            var gradients = [
+                'linear-gradient(135deg,#ec4899,#f43f5e)',
+                'linear-gradient(135deg,#8b5cf6,#6366f1)',
+                'linear-gradient(135deg,#3b82f6,#06b6d4)',
+                'linear-gradient(135deg,#22c55e,#10b981)',
+                'linear-gradient(135deg,#f59e0b,#ef4444)',
+                'linear-gradient(135deg,#14b8a6,#0ea5e9)',
+                'linear-gradient(135deg,#a855f7,#ec4899)'
+            ];
+            var html = '';
+            messages.forEach(function(msg, i) {
+                var isUnread = !msg.seen && !viewedIds[msg.id];
+                var initial = (msg.from.name || msg.from.address).charAt(0).toUpperCase();
+                var grad = gradients[initial.charCodeAt(0) % gradients.length];
+                html += '<div class="email-item glass ' + (isUnread ? 'unread' : 'read') + '" ' +
+                    'style="animation:fadeInUp 0.5s cubic-bezier(0.22,1,0.36,1) ' + (i * 0.06) + 's forwards;opacity:0;" ' +
+                    'onclick="openMessage(\'' + msg.id + '\')">' +
+                    '<div class="email-row">' +
+                    '<div class="email-avatar" style="background:' + grad + ';">' + initial + '</div>' +
+                    '<div class="email-content">' +
+                    '<div class="email-top">' +
+                    '<span class="email-sender">' + esc(msg.from.name || msg.from.address) + '</span>' +
+                    '<div class="email-meta">' +
+                    (isUnread ? '<span class="unread-dot"></span>' : '') +
+                    '<span class="email-time">' + fmtDate(msg.createdAt) + '</span>' +
+                    '</div></div>' +
+                    '<div class="email-subject">' + esc(msg.subject || '(No Subject)') + '</div>' +
+                    '<div class="email-preview">' + esc(msg.intro || 'No preview available') + '</div>' +
+                    '</div></div></div>';
+            });
+            list.innerHTML = html;
+        }
+        function updateStats() {
+            var total = messages.length;
+            var unread = 0;
+            messages.forEach(function(m) { if (!m.seen && !viewedIds[m.id]) unread++; });
+            document.getElementById('sTotal').textContent = total;
+            document.getElementById('sUnread').textContent = unread;
+            document.getElementById('mTotal').textContent = total;
+            document.getElementById('mUnread').textContent = unread;
+        }
+        // ---------- Actions ----------
+        function openMessage(id) {
+            viewedIds[id] = true;
+            renderList();
+            updateStats();
+            fetchDetail(id).then(function(msg) {
+                if (!msg) { showToast('Failed to load', 'error'); return; }
+                document.getElementById('modalSubject').textContent = msg.subject || '(No Subject)';
+                document.getElementById('modalFrom').textContent = 'From: ' + (msg.from.name || '') + ' <' + msg.from.address + '>';
+                document.getElementById('modalDate').textContent = new Date(msg.createdAt).toLocaleString();
+                document.getElementById('modalBody').innerHTML = msg.html || ('<p style="color:#94a3b8;">' + esc(msg.text || 'No content') + '</p>');
+                document.getElementById('modalOverlay').classList.add('active');
+                document.getElementById('modalBox').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }).catch(function() {
+                showToast('Failed to load message', 'error');
+            });
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.getElementById('modalBox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        function copyEmail() {
+            var email = document.getElementById('emailAddr').value;
+            if (!email) { showToast('Please wait...', 'info'); return; }
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(email).then(function() {
+                    showToast('📋 Copied to clipboard!', 'success');
+                }).catch(function() {
+                    fallbackCopy(email);
+                });
+            } else {
+                fallbackCopy(email);
+            }
+        }
+        function fallbackCopy(text) {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;left:-9999px;';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); showToast('📋 Copied!', 'success'); }
+            catch(e) { showToast('Copy failed', 'error'); }
+            document.body.removeChild(ta);
+        }
+        function generateNewEmail() {
+            if (isGenerating) return;
+            showToast('Generating new email...', 'info');
+            if (refreshInterval) clearInterval(refreshInterval);
+            messages = [];
+            viewedIds = {};
+            renderList();
+            updateStats();
+            setTimeout(initEmail, 400);
+        }
+        function refreshInbox() {
+            var icon = document.getElementById('refreshIcon');
+            icon.classList.add('spinner');
+            showToast('Refreshing inbox...', 'info');
+            fetchMessages();
+            setTimeout(function() { icon.classList.remove('spinner'); }, 1000);
+        }
+        // ---------- Helpers ----------
+        function esc(text) {
+            if (!text) return '';
+            var d = document.createElement('div');
+            d.textContent = text;
+            return d.innerHTML;
+        }
+        function fmtDate(ds) {
+            var d = new Date(ds);
+            var now = new Date();
+            var diff = now - d;
+            if (diff < 60000) return 'Just now';
+            if (diff < 3600000) return Math.floor(diff / 60000) + 'm ago';
+            if (diff < 86400000) return Math.floor(diff / 3600000) + 'h ago';
+            return Math.floor(diff / 86400000) + 'd ago';
+        }
+        // ---------- Toast ----------
+        function showToast(message, type) {
+            type = type || 'info';
+            var box = document.getElementById('toastBox');
+            var toast = document.createElement('div');
+            toast.className = 'toast ' + type;
+            var icons = {
+                success: '<svg viewBox="0 0 512 512" width="20" height="20"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z" fill="#22c55e"/></svg>',
+                error: '<svg viewBox="0 0 512 512" width="20" height="20"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" fill="#ef4444"/></svg>',
+                info: '<svg viewBox="0 0 512 512" width="20" height="20"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" fill="#3b82f6"/></svg>'
+            };
+            toast.innerHTML = '<span class="toast-icon">' + (icons[type] || icons.info) + '</span><span class="toast-msg">' + message + '</span>';
+            box.appendChild(toast);
+            setTimeout(function() {
+                toast.classList.add('hiding');
+                setTimeout(function() {
+                    try { box.removeChild(toast); } catch(e){}
+                }, 500);
+            }, 3000);
+        }
+        // ---------- Keyboard & Visibility ----------
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden && token) fetchMessages();
+        });
+        // ---------- Ripple on Primary Buttons ----------
+        document.addEventListener('click', function(e) {
+            var btn = e.target.closest('.btn-primary');
+            if (!btn) return;
+            var rect = btn.getBoundingClientRect();
+            var ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            var size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            btn.appendChild(ripple);
+            setTimeout(function() { try { btn.removeChild(ripple); } catch(e){} }, 600);
+        });
+    </script>
+    <div id="root" style="display:none;"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
